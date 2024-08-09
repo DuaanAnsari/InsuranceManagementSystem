@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Modules.Models.HospitalInfo>
+
+@{
+
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "Hospital";
+}
+
+<h1>Hospital</h1>
+
+<p>
+    <a asp-action="CreateHospital">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HospitalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tell_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Website)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tell_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                <a asp-action="EditHospital" asp-route-id="@item.HospitalId">Edit</a> |
+                <a asp-action="HospitalDetails" asp-route-id="@item.HospitalId">Details</a> |
+                    <a asp-action="DeleteHospital" asp-route-id="@item.HospitalId" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

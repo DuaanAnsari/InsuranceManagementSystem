@@ -1,0 +1,54 @@
+﻿@model Modules.Models.HospitalInfo
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "CreateHospital";
+}
+
+<h1 class=" text-primary text-center">CreateHospital</h1>
+
+<h4 class=" text-primary text-center">HospitalInfo</h4>
+<hr />
+
+
+        <form asp-action="CreateHospital">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HospitalName" class="control-label"></label>
+                <input asp-for="HospitalName" class="form-control" />
+                <span asp-validation-for="HospitalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tell_No" class="control-label"></label>
+                <input asp-for="Tell_No" class="form-control" />
+                <span asp-validation-for="Tell_No" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+                <span asp-validation-for="Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+        </form>
+
+<div>
+    <a asp-action="Hospital">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

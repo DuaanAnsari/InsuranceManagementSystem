@@ -1,0 +1,67 @@
+﻿@model Modules.Models.PoliciesInfo
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "PolicyDetail";
+}
+
+<h1>PolicyDetail</h1>
+
+<div>
+    <h4>PoliciesInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PolicyHolder_Info)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PolicyHolder_Info)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Policy_Term)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Policy_Term)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Coverage_Details)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Coverage_Details)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Coverage_Limits)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Coverage_Limits)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conditions)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conditions)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EMI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EMI)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditPolicy" asp-route-id="@Model?.PolicyId">Edit</a> |
+    <a asp-action="PolicyDetail">Back to List</a>
+</div>

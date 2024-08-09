@@ -1,0 +1,52 @@
+﻿@model Modules.Models.InsuredInfo
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "CreateInsurance";
+}
+
+<h1 class="text-primary text-center">CreateInsurance</h1>
+
+<h4 class="text-primary text-center">InsuredInfo</h4>
+<hr />
+
+   
+        <form asp-action="CreateInsurance">
+    <div class="row align-items-center justify-content-center">
+    <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EmpId" class="control-label"></label>
+                <select asp-for="EmpId" class ="form-control" asp-items="ViewBag.EmpId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyId" class="control-label"></label>
+                <select asp-for="PolicyId" class ="form-control" asp-items="ViewBag.PolicyId"></select>
+            </div>
+            </div>
+            <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyStatus" class="control-label"></label>
+                <input asp-for="PolicyStatus" class="form-control" />
+                <span asp-validation-for="PolicyStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+        </form>
+  
+
+<div>
+    <a asp-action="Insured">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

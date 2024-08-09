@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout_Admin";
+}
+<style>
+    .d-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hover {
+        background-color:antiquewhite;
+              transition-duration: 300ms;
+    }
+    #hover:hover{
+    transform:scale(1.1);
+    transition-duration: 300ms;
+    }
+    .top{
+        margin-top:20px;
+    }
+</style>
+<div class="container top text-center">
+    <h1>Quick Actions</h1>
+    <hr />
+    <div class="row justify-content-between align-content-between mb-lg-3">
+        <div class="col-md-3 rounded-lg mx-auto d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;"  id="hover">
+            <a asp-action="CreateCompany" asp-controller="Admin"><h4 class="text-center">Create Company</h4></a>
+        </div>
+        <div class="col-md-3 rounded-lg mx-auto d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;" id="hover">
+            <a asp-action="CreateEmployee" asp-controller="Admin"><h4 class="text-center">Create Employee</h4></a>
+        </div>
+        <div class="col-md-3 rounded-lg mx-auto  d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;" id="hover">
+            <a asp-action="CreateHospital" asp-controller="Admin"><h4 class="text-center">Create Hospital</h4></a>
+        </div>
+    </div>
+    <div class="row justify-content-between align-content-between">
+        <div class="col-md-3 rounded-lg mx-auto  d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;" id="hover">
+            <a asp-action="CreatePolicy" asp-controller="Admin"><h4 class="text-center">Create Policy</h4></a>
+        </div>
+        <div class="col-md-3 rounded-lg mx-auto  d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;" id="hover">
+            <a asp-action="InsuredEmp" asp-controller="Admin"><h4 class="text-center">View Insured Employee</h4></a>
+        </div>
+        <div class="col-md-3 rounded-lg mx-auto d-flex justify-content-center align-items-center" style="height: 150px; width: 300px; border-radius:10px;" id="hover">
+            <a asp-action="Index" asp-controller="User"><h4 class="text-center">View User Panel</h4></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Modules.Models.CompanyInfo>
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "Company";
+}
+
+<h1>Company</h1>
+
+<p>
+    <a asp-action="CreateCompany">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tell_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tell_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-action="EditCompany" asp-route-id="@item.CompanyId">Edit</a> |
+                <a asp-action="CompanyDetails" asp-route-id="@item.CompanyId">Details</a> |
+                <a asp-action="DeleteCompany" asp-route-id="@item.CompanyId" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

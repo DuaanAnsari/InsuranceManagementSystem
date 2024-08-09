@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Modules.Models.InsuredInfo>
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "Insurance";
+}
+
+<h1>Insurance</h1>
+
+<p>
+    <a asp-action="CreateInsurance">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Policy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PolicyStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Policy.PolicyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PolicyStatus)
+            </td>
+            <td>
+                <a asp-action="EditInsurance" asp-route-id="@item.InsureId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.InsureId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.InsureId" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

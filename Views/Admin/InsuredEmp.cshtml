@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Modules.Models.EmployeeInfo>
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "InsuredEmp";
+}
+
+<h1>InsuredEmp</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.joindate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Insured)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyInfo.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.joindate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Insured)
+            </td>
+            <td>
+        
+                    <a asp-action="Delete" asp-route-id="@item.EmployeeId" class=" btn btn-danger ">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

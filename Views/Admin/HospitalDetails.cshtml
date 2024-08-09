@@ -1,0 +1,42 @@
+﻿@model Modules.Models.HospitalInfo
+
+@{
+    ViewData["Title"] = "HospitalDetails";
+}
+
+<h1>HospitalDetails</h1>
+
+<div>
+    <h4>HospitalInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HospitalName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HospitalName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tell_No)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tell_No)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditHospital" asp-route-id="@Model?.HospitalId">Edit</a> |
+    <a asp-action="Hospital">Back to List</a>
+</div>

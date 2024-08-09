@@ -1,0 +1,74 @@
+﻿@model Modules.Models.PoliciesInfo
+
+@{
+    ViewData["Title"] = "IndividualPolicy";
+}
+
+<h1 class="text-center text-primary">@Html.DisplayFor(model => model.PolicyName)</h1>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Policy
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+        <hr/>
+        <dt class = "col-sm-2">
+            Required Information
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PolicyHolder_Info)
+        </dd>
+        <hr/>
+        <dt class = "col-sm-2">
+            Policy Terms
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Policy_Term)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            Details
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Coverage_Details)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            Limits
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Coverage_Limits)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            Conditions
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conditions)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            Amount
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <hr />
+        <dt class = "col-sm-2">
+            Easy-Monthly-Installment
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EMI)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Register" asp-controller="User" class="btn btn-primary">Apply Now</a>
+</div>
+
+         

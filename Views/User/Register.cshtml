@@ -1,0 +1,89 @@
+﻿@model Modules.Models.EmployeeInfo
+
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="container justify-content-center align-items-center">
+<h1 class="text-center text-primary">Register</h1>
+
+   
+<hr />
+
+
+        <form asp-action="Register">
+      <div class="row align-items-center justify-content-center">
+            <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>     
+            <div class="form-group">
+                <label asp-for="EmployeeName" class="control-label">Name</label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Designation" class="control-label"></label>
+                <input asp-for="Designation" class="form-control" />
+                <span asp-validation-for="Designation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="salary" class="control-label"></label>
+                <input asp-for="salary" class="form-control" />
+                <span asp-validation-for="salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            </div>
+        <div class="col-md-4 mx-3">
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label">Company Name</label>
+                <select asp-for="CompanyId" class="form-control">
+                    <option selected disabled>Select Company</option>
+                    @foreach (var data in ViewBag.Data)
+                    {
+                        <option value="@data.CompanyId">
+                            @data.CompanyName
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="joindate" class="control-label"></label>
+                <input asp-for="joindate" class="form-control" />
+                <span asp-validation-for="joindate" class="text-danger"></span>
+            </div>
+           
+       
+      
+        
+            
+            </div>
+            
+         
+            </div>
+            <br />
+        <div class="form-group">
+            <input type="submit" value="Create" class=" btn btn-primary w-25 mx-auto d-block" />
+        </div>
+        </form>
+@*    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

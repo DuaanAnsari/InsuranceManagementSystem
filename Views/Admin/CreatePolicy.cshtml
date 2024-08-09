@@ -1,0 +1,69 @@
+﻿@model Modules.Models.PoliciesInfo
+
+@{
+    Layout = "_Layout_Admin";
+    ViewData["Title"] = "CreatePolicy";
+}
+
+<h1>CreatePolicy</h1>
+
+<h4>PoliciesInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePolicy">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PolicyName" class="control-label"></label>
+                <input asp-for="PolicyName" class="form-control" />
+                <span asp-validation-for="PolicyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PolicyHolder_Info" class="control-label"></label>
+                <input asp-for="PolicyHolder_Info" class="form-control" />
+                <span asp-validation-for="PolicyHolder_Info" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Policy_Term" class="control-label"></label>
+                <input asp-for="Policy_Term" class="form-control" />
+                <span asp-validation-for="Policy_Term" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coverage_Details" class="control-label"></label>
+                <input asp-for="Coverage_Details" class="form-control" />
+                <span asp-validation-for="Coverage_Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coverage_Limits" class="control-label"></label>
+                <input asp-for="Coverage_Limits" class="form-control" />
+                <span asp-validation-for="Coverage_Limits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Conditions" class="control-label"></label>
+                <input asp-for="Conditions" class="form-control" />
+                <span asp-validation-for="Conditions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EMI" class="control-label"></label>
+                <input asp-for="EMI" class="form-control" />
+                <span asp-validation-for="EMI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Policy">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
