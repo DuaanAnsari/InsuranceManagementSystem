@@ -1,0 +1,100 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="container justify-content-center align-item-center">
+
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+         <div class="row">
+            <div class="col-md-4">
+            <h2>Create a new account.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.Name"></label>
+                <input asp-for="Input.Name" class="form-control" autocomplete="name" aria-required="true" />
+                
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+               
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="Input.Designation"></label>
+                    <input asp-for="Input.Designation" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.Designation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Salary"></label>
+                    <input asp-for="Input.Salary" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.Salary" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Address"></label>
+                    <input asp-for="Input.Address" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Country"></label>
+                    <input asp-for="Input.Country" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.Country" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.City"></label>
+                    <input asp-for="Input.City" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.joindate"></label>
+                    <input asp-for="Input.joindate" class="form-control" autocomplete="new-password" aria-required="true" />
+
+                    <span asp-validation-for="Input.joindate" class="text-danger"></span>
+                </div>
+              
+           <div class="form-group">
+                <select class="form-control" asp-for="Input.Role" asp-items="@Model.Input.RolesList">
+                    <option disabled selected> Select the Role</option>
+                </select>
+            </div>
+    @*   <div class="form-group">
+                    <label>Select Company</label>
+            <select class="form-control" asp-for="Input.CompanyId" asp-items="@Model.Input.CompList">
+                <option selected></option>
+            </select>
+        </div> *@
+            <br />
+            <button id="registerSubmit" type="submit" class=" btn btn-primary">Register</button>
+        </div>
+        </div>
+        </form>
+    </div>
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
